@@ -1,9 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import React from 'react'
+import { usePathName } from 'next/navigation'
 
-const NavLink = (href, ...rest) => {
+const NavLink = ({ href, ...rest }) => {
+	const pathname = usePathName()
+	const isActive = href.startsWith(pathname)
+
+	console.log(isActive)
+
 	return <Link href={href} {...rest} />
 }
 

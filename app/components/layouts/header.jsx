@@ -8,7 +8,7 @@ const Header = () => {
 			<nav className='container'>
 				<ul className='flex gap-3'>
 					<li>
-						<NavLink href="/">Home</Nav>
+						<NavLink href="/">Home</NavLink>
 					</li>
 					<li>
 						<NavLink href="/about">About</NavLink>
