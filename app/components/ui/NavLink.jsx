@@ -1,15 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathName } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const NavLink = ({ href, ...rest }) => {
-	const pathname = usePathName()
-	const isActive = href.startsWith(pathname)
+	const pathname = usePathname()
+	const isActive = href === pathname
 
-	console.log(isActive)
+	console.log(pathname)
 
-	return <Link href={href} {...rest} />
+	return <Link className={isActive ? 'text-cyan-500' : ''} href={href} {...rest} />
 }
 
 export default NavLink
