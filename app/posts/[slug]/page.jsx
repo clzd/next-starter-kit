@@ -1,8 +1,8 @@
-import React from 'react'
+import { getPostBySlug } from '@/lib/posts'
 
 const Page = async ({ params }) => {
 	const { slug } = params
-	// const post = await getPostBySlug(; learn - nrxtjs)
+	const { content, frontmatter } = await getPostBySlug(slug)
 
 	return (
 		<section className="py-24">
@@ -13,7 +13,7 @@ const Page = async ({ params }) => {
 				</header>
 
 				{/* post content */}
-				{/* <main className="prose mt-12">{content}</main> */}
+				<main className="prose mt-12">{content}</main>
 
 			</div>
 		</section>

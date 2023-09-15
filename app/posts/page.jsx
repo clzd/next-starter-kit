@@ -1,9 +1,9 @@
 import React from 'react'
 
-const psge = () => {
+const Page = () => {
   return (
     <div>All blog posts</div>
   )
 }
 
-export default psge
+export default Page
