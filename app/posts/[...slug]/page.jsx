@@ -1,14 +1,15 @@
-import { getPostBySlug } from '@/lib/posts'
+import { getAllPosts, getPostBySlug } from '@/lib/posts'
 
 export async function generateStaticParams() {
 	const posts = await getAllPosts()
 
-	return posts.map(post => ({ slug: post.slug }))
+	return posts.map(post => ({ slug: [post.slug] }))
 }
 
 const Page = async ({ params }) => {
+	console.log(params)
 	const { slug } = params
-	const { content, frontmatter } = await getPostBySlug(slug)
+	const { content, frontmatter } = await getPostBySlug(slug[0])
 
 	return (
 		<section className="py-24">
