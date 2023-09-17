@@ -1,5 +1,11 @@
 import { getPostBySlug } from '@/lib/posts'
 
+export async function generateStaticParams() {
+	const posts = await getAllPosts()
+
+	return posts.map(post => ({ slug: post.slug }))
+}
+
 const Page = async ({ params }) => {
 	const { slug } = params
 	const { content, frontmatter } = await getPostBySlug(slug)
