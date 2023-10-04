@@ -6,7 +6,7 @@ const Pageviews = async ({ slug }) => {
 	// const views = await getPageview(slug)
 
 	// await wait(2000)
-	await wait
+	await wait(2000)
 
 	return (
 		<div>views: 100</div>
