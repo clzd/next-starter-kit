@@ -3,9 +3,9 @@ import { getGuestbookEntries } from '@/lib/mongo/guestbook'
 async function getData() {
 	const { entries, error } = await getGuestbookEntries()
 
-	if (!entries || error) throw new Error('Failed to fetch entries.')
-
-	return entries
+	// if (!entries || error) throw new Error('Failed to fetch entries.')
+	console.log(entries)
+	return []
 }
 
 
